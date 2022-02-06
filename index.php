@@ -17,6 +17,9 @@
             <div class="text">
             <div class="case">
 
+            <audio controls src=".\assets\musique\">Your browser does not support the
+            <code>audio</code></audio>
+
             </div>
             <p>Un mix pas infini parce que faut pas déconner</p>
             </div>
