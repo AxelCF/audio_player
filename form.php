@@ -4,11 +4,11 @@
     <body>
         <? include("/laragon/www/audio_player/INC/header.php") ?>
         <form action="" method="post">
-            <label for="link">Adresse du fichier</label>
+            <label for="link file">Adresse du fichier</label>
             <input type="text" name="linkFile">
             <br>
             <br>
-            <label for="">Adresse de l'image</label>
+            <label for="link capture">Adresse de l'image</label>
             <input type="text" name="linkCapture">
             <input type="submit" name="submit">
         </form>
