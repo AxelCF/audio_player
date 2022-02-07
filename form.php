@@ -4,7 +4,7 @@
     <body>
         <? include("/laragon/www/audio_player/INC/header.php") ?>
         <form action="" method="post">
-            <label for="">Adresse du fichier</label>
+            <label for="link">Adresse du fichier</label>
             <input type="text" name="linkFile">
             <br>
             <br>
