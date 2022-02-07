@@ -1,17 +1,8 @@
 <!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./ASSETS/CSS/body.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Prompt&display=swap" rel="stylesheet">
-        <title>Audio player</title>
-        <script src="./ASSETS/JS/scripts.js" defer></script>
-        <link rel="stylesheet" href="./ASSETS/CSS/body.css">
-    </head>
+<html lang="en">
+    <? include("/laragon/www/audio_player/INC/head.php"); ?>
     <body>
+        <? include("/laragon/www/audio_player/INC/header.php"); ?>
     <h2>Pour vous</h2>
         <div class="container1">
             <div class="text">
@@ -50,5 +41,6 @@
                 <div class="case">
             </div>
         </div>
+        <? include("/laragon/www/audio_player/INC/footer.php") ?>
     </body>
 </html>
