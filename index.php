@@ -9,59 +9,45 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Prompt&display=swap" rel="stylesheet">
         <title>Audio player</title>
         <script src="./ASSETS/JS/scripts.js" defer></script>
+        <link rel="stylesheet" href="./ASSETS/CSS/body.css">
     </head>
     <body>
-        <h2>Pour vous</h2>
+    <h2>Pour vous</h2>
         <div class="container1">
-
             <div class="text">
-            <div class="case">
-
-            <audio controls src=".\assets\musique\">Your browser does not support the
-            <code>audio</code></audio>
-
+                <div class="case">
+        
+                </div>
+                <p>Un mix pas infini parce que il ne faut pas déconner</p>
             </div>
-            <p>Un mix pas infini parce que faut pas déconner</p>
-            </div>
-
             <div class="text">
-            <div class="case">
+                <div class="case">
 
+                </div>
+                <p>Un mix pas infini parce que il ne faut pas déconner</p>
             </div>
-            <p>Un mix pas infini parce que faut pas déconner</p>
-            </div>
-
             <div class="text">
-            <div class="case">
 
-
+                <div class="case">
+                </div>
+                <p>Un mix pas infini parce que il ne faut pas déconner</p>
             </div>
-            <p>Un mix pas infini parce que faut pas déconner</p>
-            </div>
-
             <div class="text">
-            <div class="case">
-
-            </div>
-            <p>Un mix pas infini parce que faut pas déconner</p>
+                
+                <div class="case">
+                </div>
+                <p>Un mix pas infini parce que il ne faut pas déconner</p>
             </div>
         </div>
-
-
         <h2>Découverte</h2>
         <div class="container2">
-
             <div class="case">
-
-            </div>
-            <div class="case">
-
-            </div>
-            <div class="case">
-
-            </div>
-            <div class="case">
-
+                </div>
+                <div class="case">
+                </div>
+                <div class="case">
+                </div>
+                <div class="case">
             </div>
         </div>
     </body>

@@ -1,46 +1,46 @@
 body {
-  background-color: rgb(17, 14, 14);
-  font-family: "Poppins", sans-serif;
-  font-family: "Prompt", sans-serif;
-}
-
-h2 {
-  margin-left: 100px;
-  color: white;
-}
-
-p {
-  color: white;
-}
-
-/* -------------------container 1------------------- */
-.container1 {
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-top: 20px;
-  margin-bottom: 100px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.case {
-  height: 200px;
-  width: 200px;
-  border: 1px solid white;
-}
-
-.text {
-  text-align: justify;
-  height: 200px;
-  width: 200px;
-}
-
-/* -------------------container 2------------------- */
-
-.container2 {
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-}
+    background-color: rgb(17, 14, 14);
+    font-family: "Poppins", sans-serif;
+    font-family: "Prompt", sans-serif;
+  }
+  
+  h2 {
+    margin-left: 100px;
+    color: white;
+  }
+  
+  p {
+    color: white;
+  }
+  
+  /* -------------------container 1------------------- */
+  .container1 {
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .case {
+    height: 200px;
+    width: 200px;
+    border: 1px solid white;
+  }
+  
+  .text {
+    text-align: justify;
+    height: 200px;
+    width: 200px;
+  }
+  
+  /* -------------------container 2------------------- */
+  
+  .container2 {
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
