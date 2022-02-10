@@ -20,9 +20,7 @@ let vol = song.volume;
 let i = 0;
 
 song.type = 'audio/mp3';
-arrayLinks = ['./ASSETS/MUSIC/LXSTCXNTURY-ODIUM.mp3', 
-'https://www.bensound.com/bensound-music/bensound-dubstep.mp3',
- './ASSETS/MUSIC/Halsey-BALENCIAGA.mp3'];
+arrayLinks = []
  
 //Audio file source url
 song.src = arrayLinks[i];
