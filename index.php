@@ -15,7 +15,7 @@
                         <span class="text">Lecteur Audio</span>
 		
 			            <span class="text">"Avec panache"</span>
-			            <br>
+                    <div class="player">
 			        <div class="playback_controls">
                         <button onclick="changeMusicBck()"><i class="fa fa-fast-backward"></i></button>
                         <button id="playpause" onclick="playPause()"><i class="fa fa-play"></i></button>
@@ -26,7 +26,7 @@
 			        <div id="seekbar">
 				        <input type="range" oninput="setPos(this.value)" id="seek" value="0" max="">
 			        </div>
-			        <br>
+                    <br>
 			        <div class="volume_controls">
                         <button id="mute" onclick="mute()"><i class="fa fa-volume-up"></i></button>
                         <div id="setvolume">
@@ -34,10 +34,10 @@
                         </div>
 			        </div>
                     </div>
-		            </div>
 	            </div>
             </div>
         </div>
+</div>
         <?php include("./INC/footer.php") ?>
     </body>
 </html>
