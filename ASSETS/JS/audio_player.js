@@ -13,7 +13,7 @@ Projet original : https://codepen.io/codingandstuff/pen/rNNNzyW?editors=0010
   - Ajout d'un changement d'état sur le bouton "playpause".
   - Ajout du changement automatique de musique quand celle-ci arrive à la fin.
   - Ajout du changement d'état du bouton stop. 
-  - Remise à zero de l'index avec le bouton stop.
+  - Remise à zero de l'index avec l'action du bouton stop.
   
 */
 
@@ -52,25 +52,24 @@ function changeMusicFwd(){
         if (i > arrayLinks.length - 2){
         stop();
         song.src = arrayLinks[i = 0];
-        song.play();
+        playPause();
       }else{
         stop();
         song.src = arrayLinks[i += 1];
-        song.play();
+        playPause();
       }
   }
 function changeMusicBck(){
     if(song.currentTime <= 5){
       if (i < 1){
         stop();
-        i = arrayLinks.length -1;
-        song.src = arrayLinks[i];
-        song.play();
+        song.src = arrayLinks[i = arrayLinks.length -1];
+        playPause();
       }
       else{
         stop();
         song.src = arrayLinks[i -= 1];
-        song.play();
+        playPause();
       }
     }else{
       song.currentTime = (song.currentTime - 5);
@@ -129,8 +128,8 @@ song.addEventListener('timeupdate',function() {
 
   console.log(curtime + " / " + document.getElementById('seek').max);
 
-  ////////////////////////////////////////////////////////////////////////////////////////////////////
   // verifier si le son est superieur à zero décrementation sinon rien
+
 /*
   if(curtime == document.getElementById('seek').max -5 && fade == false){
 
@@ -146,7 +145,6 @@ song.addEventListener('timeupdate',function() {
 
     }
 */
-    //////////////////////////////////////////////////////////////////////////////////////////////
 
     changeMusicAuto(curtime, document.getElementById('seek').max);
   })
