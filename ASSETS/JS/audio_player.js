@@ -5,37 +5,57 @@ Projet original : https://codepen.io/codingandstuff/pen/rNNNzyW?editors=0010
 
   - Ajout de la possibilité de changer de musique "fichiers ou urls".
   - Ajout de la possibilité sur le bouton "back" de changer de musique si <= 5 secondes ou de reculer le temps " - 5 secondes " si >.
-  - Amélioration de la gestion du volume "Mute si volume = 0", correction d'un bug de la fonction "mute" qui réinitialisé le volume de départ pour le mettre à fond.
-  - Correction d'un bug graphique du bouton "mute" qui ne fonctionné par correctement.
-  - Remplacement des déclarations des variables "var" par "let"
+  - Amélioration de la gestion du volume.
+  - Correction d'un bug graphique du bouton "mute" qui ne fonctionnait par correctement.
+  - Remplacement des déclarations des variables "var" par "let".
   - Abaissement du volume par défaut.
-  - Supression des lignes inutiles, indentation de mon code. 
+  - Supression des lignes inutiles, indentation de mon code.
+  - Ajout d'un changement d'état sur le bouton "playpause".
+  - Ajout du changement automatique de musique quand celle-ci arrive à la fin.
+  - Ajout du changement d'état du bouton stop. 
+  - Remise à zero de l'index avec le bouton stop.
   
 */
 
 let song = new Audio;
 let muted = false;
-song.volume = 0.2;
+song.volume = 0.0;
 let vol = song.volume;
 let i = 0;
+let saveVolume = 0.0;
+let saveVolumeAuto = 0.0;
+let fade = false;
 
 song.type = 'audio/mp3';
 arrayLinks = []
+
  
 //Audio file source url
 song.src = arrayLinks[i];
 
+function changeMusicAuto(curtime, duration){
+  if (curtime == Math.floor(duration) 
+  || curtime == Math.ceil(duration)) {
+    if(i > arrayLinks.length - 2){
+      stop();
+      song.src = arrayLinks[i = 0];
+      song.play();
+    }else{
+      stop()
+      song.src = arrayLinks[i += 1];
+      playPause();
+    }
+  } 
+}
 
 function changeMusicFwd(){
         if (i > arrayLinks.length - 2){
         stop();
-        i = 0;
-        song.src = arrayLinks[i];
+        song.src = arrayLinks[i = 0];
         song.play();
       }else{
         stop();
-        i++;
-        song.src = arrayLinks[i];
+        song.src = arrayLinks[i += 1];
         song.play();
       }
   }
@@ -49,8 +69,7 @@ function changeMusicBck(){
       }
       else{
         stop();
-        i--;
-        song.src = arrayLinks[i];
+        song.src = arrayLinks[i -= 1];
         song.play();
       }
     }else{
@@ -60,13 +79,16 @@ function changeMusicBck(){
 function playPause() {
 	if (!song.paused) {
 		song.pause();
+    document.getElementById('playpause').innerHTML = '<i class="fa fa-play"></i>';
 	} else {
 		song.play();
+    document.getElementById('playpause').innerHTML = '<i class="fa fa-pause"></i>';
 	}
 }
 function stop() {
-	song.pause();
+	playPause();
 	song.currentTime = 0;
+  song.src = arrayLinks[0];
 	document.getElementById('seek').value = 0;
 }
 function setPos(pos) {
@@ -74,27 +96,57 @@ function setPos(pos) {
 }
 function mute() {
 	if (muted) {
+    document.getElementById('volume').value = saveVolume;
 		song.volume = vol;
     document.getElementById('mute').innerHTML = '<i class="fa fa-volume-up"></i>';
 		muted = false;
 	} else {
-		song.volume = 0;
+		song.volume = 0.0;
     document.getElementById('mute').innerHTML = '<i class="fa fa-volume-off"></i>';
+    saveVolume = document.getElementById('volume').value;
+    document.getElementById('volume').value = 0.0;
 		muted = true;
 	}
 }
 function setVolume(volume) {
   if(volume == 0.0){
     mute();
+    vol = 0;
     document.getElementById('mute').innerHTML = '<i class="fa fa-volume-off"></i>';
   }else{
+    muted = false;
     document.getElementById('mute').innerHTML = '<i class="fa fa-volume-up"></i>';
   }
-	song.volume = volume;
-	vol = volume;
+  if(!muted){
+    song.volume = volume;
+    vol = volume;
+  }
 }
 song.addEventListener('timeupdate',function() {
-	curtime = parseInt(song.currentTime,10);
+  curtime = parseInt(song.currentTime,10);
 	document.getElementById('seek').max = song.duration;
 	document.getElementById('seek').value = curtime;
-})
+
+  console.log(curtime + " / " + document.getElementById('seek').max);
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // verifier si le son est superieur à zero décrementation sinon rien
+/*
+  if(curtime == document.getElementById('seek').max -5 && fade == false){
+
+    fade = true;
+    saveVolumeAuto = song.volume;
+
+    const myInterval = setInterval(function(){if(!song.volume == 0.0) Math.trunc(song.volume -= 0.1)}, 1000);
+    if(song.volume == 0 && fade == true){
+      clearInterval(myInterval);
+      fade = false;
+    }
+    
+
+    }
+*/
+    //////////////////////////////////////////////////////////////////////////////////////////////
+
+    changeMusicAuto(curtime, document.getElementById('seek').max);
+  })
