@@ -29,9 +29,9 @@
                     <br>
 			        <div class="volume_controls">
                         <button id="mute" onclick="mute()"><i class="fa fa-volume-up"></i></button>
-                        <div id="setvolume">
+
                             <input type="range" id="volume" oninput="setVolume(this.value)" min="0.0" max="1" step="0.1" value="0.0">
-                        </div>
+
 			        </div>
                     </div>
 	            </div>
