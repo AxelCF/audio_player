@@ -3,12 +3,11 @@
 Fork modifié par "Jessee D'antonio"
 Projet original : https://codepen.io/codingandstuff/pen/rNNNzyW?editors=0010
 
-Modifications :
+Modifications ( hors bugs corrigé ) :
 
   - Ajout de la possibilité de changer de musique "fichiers ou urls".
-  - Ajout de la possibilité sur le bouton "back" de changer de musique si <= 5 secondes ou de reculer le temps " - 5 secondes " si >.
+  - Ajout de la possibilité sur le bouton "back" de changer de musique si <= 5 secondes ou de remettre le temps à zero le temps de la musique si >.
   - Amélioration de la gestion du volume.
-  - Correction d'un bug graphique du bouton "mute" qui ne fonctionnait par correctement.
   - Remplacement des déclarations des variables "var" par "let".
   - Abaissement à 0 du volume par défaut.
   - Supression des lignes inutiles, indentation de mon code.
@@ -28,12 +27,8 @@ let saveVolume = 0.0;
 
 song.type = 'audio/mp3';
 arrayLinks = [];
-
  
-
-
 song.src = arrayLinks[i];
-
 
 function changeMusicAuto(curtime, duration){
   if (curtime == Math.floor(duration) 
@@ -83,7 +78,7 @@ function playPause() {
     document.getElementById('playpause').innerHTML = '<i class="fa fa-play"></i>';
 	} else {
     song.src = arrayLinks[i];
-		song.play();
+    song.play();
     document.getElementById('playpause').innerHTML = '<i class="fa fa-pause"></i>';
 	}
 }
