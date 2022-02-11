@@ -20,7 +20,7 @@ Modifications ( hors bugs corrigé ) :
 
 let song = new Audio;
 let muted = false;
-song.volume = 0.0;
+song.volume = document.getElementById('volume').value;
 let vol = song.volume;
 let i = 0;
 let saveVolume = 0.0;
