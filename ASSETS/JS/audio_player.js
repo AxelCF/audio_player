@@ -33,7 +33,6 @@ arrayLinks = ['./ASSETS/MUSIC/LXSTCXNTURY-ODIUM.mp3',
 './ASSETS/MUSIC/DarkSignal-DragMeToHell.mp3',
 './ASSETS/MUSIC/01. Refrain Boy [Mob Psycho 100 Ending].mp3'];
  
-//Audio file source url
 song.src = arrayLinks[i];
 
 function changeMusicAuto(curtime, duration){
