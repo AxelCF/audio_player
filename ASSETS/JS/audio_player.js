@@ -27,11 +27,11 @@ let saveVolumeAuto = 0.0;
 let fade = false;
 
 song.type = 'audio/mp3';
-arrayLinks = []
+arrayLinks = [];
 
  
 //Audio file source url
-song.src = arrayLinks[i];
+// song.src = arrayLinks[i];
 
 function changeMusicAuto(curtime, duration){
   if (curtime == Math.floor(duration) 
@@ -80,6 +80,7 @@ function playPause() {
 		song.pause();
     document.getElementById('playpause').innerHTML = '<i class="fa fa-play"></i>';
 	} else {
+    song.src = arrayLinks[i];
 		song.play();
     document.getElementById('playpause').innerHTML = '<i class="fa fa-pause"></i>';
 	}

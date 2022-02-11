@@ -7,13 +7,12 @@ console.log(text);
     
  text.forEach(song => {
      console.log(song.link);
+     document.querySelector('.playlists').innerHTML += `
+
+    <div class="text" id="playlist-${cover.id} data-id="${cover.id}">
+    </div>`
+     song.cover_id
      songLinks.push('./ASSETS/MUSIC/' + song.link)
-
-
-     
-
-    
-
 
 });
 arrayLinks = songLinks

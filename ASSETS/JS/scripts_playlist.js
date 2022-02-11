@@ -7,7 +7,7 @@ console.log(text);
  text.forEach(cover => {
      document.querySelector('.playlists').innerHTML += `
 
-    <div class="text" data-id="${cover.id}">
+    <div class="text" id="playlist-${cover.id} data-id="${cover.id}">
     <div class="case">
         <img src="./ASSETS/COVER/${cover.image}">
     </div>
