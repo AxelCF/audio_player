@@ -14,7 +14,7 @@
                     <div class="text-container">
                         <span class="text">Lecteur Audio</span>
 		
-			            <span class="text">"Avec panache"</span>
+			            <span class="text">"pas de titre"</span>
                     <div class="player">
 			        <div class="playback_controls">
                         <button onclick="changeMusicBck()"><i class="fa fa-fast-backward"></i></button>
