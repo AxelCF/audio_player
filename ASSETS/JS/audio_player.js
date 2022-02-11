@@ -3,12 +3,14 @@
 Fork modifié par "Jessee D'antonio"
 Projet original : https://codepen.io/codingandstuff/pen/rNNNzyW?editors=0010
 
+Modifications :
+
   - Ajout de la possibilité de changer de musique "fichiers ou urls".
   - Ajout de la possibilité sur le bouton "back" de changer de musique si <= 5 secondes ou de reculer le temps " - 5 secondes " si >.
   - Amélioration de la gestion du volume.
   - Correction d'un bug graphique du bouton "mute" qui ne fonctionnait par correctement.
   - Remplacement des déclarations des variables "var" par "let".
-  - Abaissement du volume par défaut.
+  - Abaissement à 0 du volume par défaut.
   - Supression des lignes inutiles, indentation de mon code.
   - Ajout d'un changement d'état sur le bouton "playpause".
   - Ajout du changement automatique de musique quand celle-ci arrive à la fin.
@@ -23,15 +25,15 @@ song.volume = 0.0;
 let vol = song.volume;
 let i = 0;
 let saveVolume = 0.0;
-let saveVolumeAuto = 0.0;
-let fade = false;
 
 song.type = 'audio/mp3';
 arrayLinks = [];
 
  
-//Audio file source url
-// song.src = arrayLinks[i];
+
+
+song.src = arrayLinks[i];
+
 
 function changeMusicAuto(curtime, duration){
   if (curtime == Math.floor(duration) 
@@ -45,7 +47,7 @@ function changeMusicAuto(curtime, duration){
       song.src = arrayLinks[i += 1];
       playPause();
     }
-  } 
+  }
 }
 
 function changeMusicFwd(){
@@ -72,7 +74,7 @@ function changeMusicBck(){
         playPause();
       }
     }else{
-      song.currentTime = (song.currentTime - 5);
+      song.currentTime = (song.currentTime = 0);
   }
 }
 function playPause() {
@@ -129,23 +131,5 @@ song.addEventListener('timeupdate',function() {
 
   console.log(curtime + " / " + document.getElementById('seek').max);
 
-  // verifier si le son est superieur à zero décrementation sinon rien
-
-/*
-  if(curtime == document.getElementById('seek').max -5 && fade == false){
-
-    fade = true;
-    saveVolumeAuto = song.volume;
-
-    const myInterval = setInterval(function(){if(!song.volume == 0.0) Math.trunc(song.volume -= 0.1)}, 1000);
-    if(song.volume == 0 && fade == true){
-      clearInterval(myInterval);
-      fade = false;
-    }
-    
-
-    }
-*/
-
-    changeMusicAuto(curtime, document.getElementById('seek').max);
-  })
+  changeMusicAuto(curtime, document.getElementById('seek').max);
+})
