@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <?php include('./INC/head.php'); ?>
     <body>
         <?php include("./INC/header.php"); ?>

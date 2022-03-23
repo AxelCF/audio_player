@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <? include("/laragon/www/audio_player/INC/head.php") ?>
     <body>
         <? include("/laragon/www/audio_player/INC/header.php") ?>
